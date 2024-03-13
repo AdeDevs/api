@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Manipulation</title>
+    <style>
+        img,video {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Starting Off</h1>
+    <img src="" alt="yuuji" id="yuuji" width="460">
+    <video src="" id="apple" controls width="460"></video>
+    <p id="text"></p>
+    <div  id="one"></div>
+
+    <script>
+        const imagenames = [
+            'assets/1702945777790.jpg',
+            'assets/download.jpeg',
+            'assets/gothyzm.jpeg',
+            'assets/sapa.jpg'
+        ];
+
+        displayImages(imagenames);
+
+        async function displayImages(imagenames) {
+            //declaration of loop
+            for (let imagename of imagenames) {
+                const response = await fetch(imagename)
+                const blob = await response.blob();
+
+                //creation of image element
+                const img = document.createElement('img');
+
+                //setting src attribute with blob url
+                img.src = URL.createObjectURL(blob);
+
+                //setting styles
+                img.width = '200'
+                img.style.margin = "0 10px 0 0"
+
+                //appending to html div with id "one"
+                document.getElementById("one").appendChild(img);
+            }
+        }
+
+        displayYuuji().catch(error => {
+            console.log("error loading image")
+        });
+
+        async function displayYuuji() {
+            const response = await fetch("./assets/yuuji.webp")
+            console.log(response)
+            const blob = await response.blob();
+            console.log(blob)
+            document.getElementById("yuuji").src = URL.createObjectURL(blob)
+        }
+
+        displayApple().catch(error => {
+            console.log(`error loading video ${error}`)
+        })
+
+        async function displayApple() {
+            const response = await fetch("./assets/large.mp4");
+            console.log(response)
+            const blob = await response.blob();
+            console.log(blob)
+            document.getElementById("apple").src = URL.createObjectURL(blob)
+        }
+        
+        displayText()
+        async function displayText() {
+            const response = await fetch('./assets/text.doc');
+            const text = await response.text();
+            document.getElementById("text").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
