@@ -1,0 +1,73 @@
+body {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+img {
+    width: clamp(100%, 50vw, 50%);
+    height: 50vh;
+    min-height: auto;
+    height: auto;
+    max-width: 40vh;
+    object-fit: cover;
+    display: block;
+    margin: 20px 0;
+    border: 1px solid #000;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    align-items: center;
+}
+
+.profile .male, .profile .female {
+    position: relative;
+}
+
+#avatar, #ma {
+    width: 140px;
+    border-radius: 100px;
+}
+
+#loading, #f-loading {
+    background-color: #848484a9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+}
+
+button {
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+button:hover {
+    background-color: #848484a9;
+}
+
+p {
+    font-size: 20px;
+}
+
+span {
+    margin-right: 10px;
+}
