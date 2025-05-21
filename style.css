@@ -71,3 +71,8 @@ p {
 span {
     margin-right: 10px;
 }
+
+#issMap {
+    height: 400px;
+    width: 600px;
+}
