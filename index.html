@@ -5,34 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <script defer src="type.js"></script>
     <script defer src="chart.js"></script>
     <script defer src="map.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <title>Document</title>
 </head>
 
 <body>
+<!-- 
+    <canvas id="myChart" height="300px" width="800px"></canvas> -->
+    <h1>Where Is The ISS?</h1>
 
-    <canvas id="myChart" height="500px" width="800px"></canvas>
+    <p class="text">
+        This site shows the real-time location of the International Space Station (ISS) as it orbits Earth. The coordinates are updated live using data from the <a href="https://wheretheiss.at/">Where the ISS at API</a>, and the map displays its current position. Explore the map, track its movement, and see where in the world the ISS is right now!
 
+    </p>
     <p>
         the latitude of the ISS is: <span id="lat"></span> <br>
         the longitude of the ISS is: <span id="lon"></span>
     </p>
 
-    <div id="issMap"></div>
-    <div id="info"></div>
+    <div id="myMap"></div>
+
+    <!-- <div class="userMap">
+        <p>Now your turn, could you please type in your longitude and latitude to show where you are on the map</p>
+    </div> -->
+
+    <!-- <div id="info"></div>
     <div id="movies"></div>
-    <div id="means"></div>
+    <div id="means"></div> -->
 </body>
 
 </html>
